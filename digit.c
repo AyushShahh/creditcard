@@ -51,7 +51,7 @@ long get_long(char *text)
         printf("%s", text);
         fgets(buffer, 40, stdin);
         n = strtol(buffer, &endptr, 10);
-        if (*endptr == '\n')
+        if (*endptr == '\n' && n != 0)
         {
             break;
         }
