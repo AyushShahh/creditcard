@@ -31,7 +31,7 @@ int main(void)
             switch (count)
             {
                 case AMEX_LENGTH:
-                    p = prefix(n, 2, count);
+                    p = prefix(n, 2);
                     if (p == 34 || p == 37)
                     {
                         printf("AMERICAN EXPRESS\n");
@@ -42,7 +42,7 @@ int main(void)
                     }
                     break;
                 case VISA_LENGTH1:
-                    p = prefix(n, 1, count);
+                    p = prefix(n, 1);
                     if (p == 4)
                     {
                         printf("VISA\n");
@@ -53,8 +53,8 @@ int main(void)
                     }
                     break;
                 case MAX_LENGTH:
-                    p1 = prefix(n, 1, count);
-                    p2 = prefix(n, 2, count);
+                    p1 = prefix(n, 1);
+                    p2 = prefix(n, 2);
                     if (p1 == 4)
                     {
                         printf("VISA\n");
