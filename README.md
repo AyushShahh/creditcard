@@ -1,5 +1,5 @@
 # Credit card validation
-Credit card number validation using Luhn's algorithm in C. Implemented all other basic built-in required functions except `printf()`, `fgets()`, and `strtoul()` by myself for improving skill and logic. Currently supports validation of Visa, American Express and majority of MasterCard credit cards. The program correctly validates majority of Visa, American Express and MasterCard test credit cards provided for testing on [PayPal Developer](https://developer.paypal.com/api/nvp-soap/payflow/integration-guide/test-transactions/#standard-test-cards) site.
+Credit card number validation using Luhn's algorithm in C. Implemented all other basic built-in required functions except `printf()`, `fgets()`, and `strtol()` by myself for improving skill and logic. Currently supports validation of Visa, American Express and majority of MasterCard credit cards. The program correctly validates majority of Visa, American Express and MasterCard test credit cards provided for testing on [PayPal Developer](https://developer.paypal.com/api/nvp-soap/payflow/integration-guide/test-transactions/#link-creditcardnumbersfortesting) site.
 
 Main logic and Luhn's algorithm is in `credit.c` file. All other implemented functions are in `digit.c` file and their declarations are in `digit.h` header file.
 
@@ -20,3 +20,64 @@ Let's try with a credit card number: 5427660064241339
 5. The last digit of this sum (60) is 0, so this card is mathematically legit!
 6. This credit card number is `16-digit` long and it starts with `54` so it is a __MasterCard__!
 
+## Implemented functions
+```c
+double pow(double n, double p);
+```
+This function takes a number and power as input and outputs a double which is the number raised to the power.
+
+For e.g. `(long)pow(2, 3)` will return `8`.
+<hr>
+
+```c
+long get_long(char *text);
+```
+This function takes a string as an argument, prompts user for a number, gets user input and returns a long int. If the user doesn't provide a number then it will keep prompting the user until it gets a number.
+
+Example code:
+```c
+#include "digit.h"
+#include <stdio.h>
+
+int main(void)
+{
+    long n = get_long("Type a number: ");
+    printf("%ld", n);
+}
+```
+Output:
+```terminal
+$ make credit
+$ ./credit
+Type a number: skdfjlsjaj
+Type a number: fs45fd5s454f
+Type a number:
+Type a number: 675-89855-8558
+Type a number: 123456789
+123456789
+$ 
+```
+<hr>
+
+```c
+int digit_count(long n);
+```
+This function takes a long int as an input and returns the length of the number as an int.
+
+For e.g. `digit_count(123456789)` will return `9`.
+<hr>
+
+```c
+int prefix(long n, int start);
+```
+This function takes two arguments, a number (long n) and the number of digits you want from the start (int start).
+
+For e.g. `prefix(681451041, 3)` will return `681`.
+<hr>
+
+```c
+int digit_extractor(long n, int digit);
+```
+This function takes two arguments, a number (long n) and the place of digit from starting from right (starts from 1).
+
+For e.g. `digit_extractor(7114586319, 1)` will return `9`. `digit_extractor(7114586319, 4)` will return `6`.
