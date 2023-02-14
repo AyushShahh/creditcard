@@ -64,7 +64,7 @@ int prefix(long n, int start, int count)
     int p = 0;
     for (int i = 0; i < start; i++)
     {
-        p += digit_extractor(n, count - start + i + 1) * pow(10, i);
+        p += (digit_extractor(n, count - start + i + 1) * pow(10, i));
     }
     return p;
 }
