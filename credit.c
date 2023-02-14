@@ -2,12 +2,12 @@
 #include <stdio.h>
 
 
-const int MAX_LENGTH = 16;
-const int MIN_LENGTH = 13;
-const int AMEX_LENGTH = 15;
-const int MASTERCARD_LENGTH = 16;
-const int VISA_LENGTH1 = 13;
-const int VISA_LENGTH2 = 16;
+#define MAX_LENGTH 16
+#define MIN_LENGTH 13
+#define AMEX_LENGTH 15
+#define MASTERCARD_LENGTH 16
+#define VISA_LENGTH1 13
+#define VISA_LENGTH2 16
 
 typedef enum
 {
