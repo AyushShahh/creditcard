@@ -50,7 +50,7 @@ long get_long(char *text)
     {
         printf("%s", text);
         fgets(buffer, 40, stdin);
-        n = strtoul(buffer, &endptr, 10);
+        n = strtol(buffer, &endptr, 10);
         if (*endptr == '\n')
         {
             break;
@@ -64,7 +64,7 @@ int prefix(long n, int start, int count)
     int p = 0;
     for (int i = 0; i < start; i++)
     {
-        p += digit_extractor(n, count - i) * pow(10, i);
+        p += digit_extractor(n, count - start + i + 1) * pow(10, i);
     }
     return p;
 }
