@@ -72,7 +72,7 @@ int prefix(long n, int start);
 ```
 This function takes two arguments, a number (long n) and the number of digits you want from the start (int start).
 
-For e.g. `prefix(681451041, 3)` will return `681`.
+For e.g. `prefix(681451041, 3)` will return `681`. <br>If start argument is less than 1 or greater than the length of the given number, then prefix will return `0`.
 <hr>
 
 ```c
@@ -80,4 +80,4 @@ int digit_extractor(long n, int digit);
 ```
 This function takes two arguments, a number (long n) and the place of digit starting from right (starts from 1). It returns the digit as an int from the position you specified.
 
-For e.g. `digit_extractor(7114586319, 1)` will return `9`. `digit_extractor(7114586319, 4)` will return `6`.
+For e.g. `digit_extractor(7114586319, 1)` will return `9`. `digit_extractor(7114586319, 4)` will return `6`.<br>If digit argument is less than 1 or greater than the length of the given number, then it will return `0`.
