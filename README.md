@@ -78,6 +78,6 @@ For e.g. `prefix(681451041, 3)` will return `681`.
 ```c
 int digit_extractor(long n, int digit);
 ```
-This function takes two arguments, a number (long n) and the place of digit starting from right (starts from 1).
+This function takes two arguments, a number (long n) and the place of digit starting from right (starts from 1). It returns the digit as an int from the position you specified.
 
 For e.g. `digit_extractor(7114586319, 1)` will return `9`. `digit_extractor(7114586319, 4)` will return `6`.
