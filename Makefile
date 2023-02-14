@@ -1,2 +1,2 @@
 credit:
-	clang -o credit credit.c digit.c
+	gcc -o credit credit.c digit.c
