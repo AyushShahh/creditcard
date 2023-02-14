@@ -63,6 +63,10 @@ int prefix(long n, int start)
 {
     int p = 0;
     int count = digit_count(n);
+    if (start < 1 || start > count)
+    {
+        return 0;
+    }
     for (int i = 0; i < start; i++)
     {
         p += (digit_extractor(n, count - start + i + 1) * pow(10, i));
